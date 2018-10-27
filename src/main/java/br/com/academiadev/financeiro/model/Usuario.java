@@ -26,6 +26,14 @@ public class Usuario {
     @Size(min = 6, max = 16)
     private String senha;
 
+    public Usuario() {
+
+    }
+
+    public Usuario(Long id) {
+        this.id = id;
+    }
+
     public Long getId() {
         return id;
     }
