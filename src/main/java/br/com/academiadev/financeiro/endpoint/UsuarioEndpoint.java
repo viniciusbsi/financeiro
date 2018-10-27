@@ -26,7 +26,7 @@ public class UsuarioEndpoint {
         usuario.setSenha("12345678");
 
         usuarioRepository.save(usuario);
-        return "Ola Mundo";
+        return "Usuario Criado";
     }
 
     @GetMapping("/usuario")
