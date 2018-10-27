@@ -21,5 +21,3 @@ Exercício colaborativo.
 - dataVencimento,
 - dataInclusao,
 - recebedorPagador
-
-# Teste
