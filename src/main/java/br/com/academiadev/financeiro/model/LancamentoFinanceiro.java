@@ -1,10 +1,9 @@
 package br.com.academiadev.financeiro.model;
 
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.Id;
-import javax.persistence.ManyToOne;
+import javax.persistence.*;
+import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
+import javax.validation.constraints.Size;
 import java.math.BigDecimal;
 import java.time.LocalDate;
 
@@ -19,14 +18,28 @@ public class LancamentoFinanceiro {
     @ManyToOne(optional = false)
     private Usuario usuario;
 
+    @NotNull
+    @Enumerated(EnumType.STRING)
     private TipoLancamento tipolancamento;
+
+    @NotNull
+    @Enumerated
     private Status status;
+
+    @NotNull
     private LocalDate dataEmissao;
+
+    @NotNull
     private LocalDate dataVencimento;
+
+    @NotNull
     private LocalDate dataCriacao;
+
+    @NotNull
+    @Size(min = 1, max = 120)
     private String recebedorPagador;
 
-
+    @NotNull
     private BigDecimal valor;
 
     public Long getId() {
