@@ -22,10 +22,6 @@ public class UsuarioEndpoint {
     @PostMapping("/usuario")
     public void save(@RequestBody Usuario usuario) {
         usuarioRepository.save(usuario);
-<<<<<<< HEAD
-        return "Usuario Criado";
-=======
->>>>>>> 96cbc2288442e091f844c502f079915d0b79786e
     }
 
     @GetMapping("/usuario")
