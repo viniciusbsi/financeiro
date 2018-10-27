@@ -23,7 +23,7 @@ public class LancamentoFinanceiro {
     private TipoLancamento tipolancamento;
 
     @NotNull
-    @Enumerated
+    @Enumerated(EnumType.STRING)
     private Status status;
 
     @NotNull

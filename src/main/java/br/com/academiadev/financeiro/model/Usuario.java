@@ -13,12 +13,15 @@ public class Usuario {
     @Id
     @GeneratedValue
     private Long id;
-    @NotNull
+
+    @NotNull(message = "Escolha outro nome")
     @Size(min = 3, max = 120)
     private String nome;
+
     @NotNull
     @Size(min = 3, max = 60)
     private String email;
+
     @NotNull
     @Size(min = 6, max = 16)
     private String senha;
