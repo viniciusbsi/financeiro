@@ -3,9 +3,7 @@ package br.com.academiadev.financeiro.endpoint;
 import br.com.academiadev.financeiro.model.Usuario;
 import br.com.academiadev.financeiro.repository.UsuarioRepository;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.web.bind.annotation.GetMapping;
-import org.springframework.web.bind.annotation.RequestMapping;
-import org.springframework.web.bind.annotation.RestController;
+import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
 import java.util.stream.Collectors;
@@ -18,15 +16,9 @@ public class UsuarioEndpoint {
     @Autowired
     private UsuarioRepository usuarioRepository;
 
-    @GetMapping("/usuario/save")
-    public String helloWord() {
-        Usuario usuario = new Usuario();
-        usuario.setEmail("docsbruno@gmail.com");
-        usuario.setNome("Bruno Muehlbauer");
-        usuario.setSenha("12345678");
-
+    @PostMapping("/usuario")
+    public void save(@RequestBody Usuario usuario) {
         usuarioRepository.save(usuario);
-        return "Ola Mundo";
     }
 
     @GetMapping("/usuario")
